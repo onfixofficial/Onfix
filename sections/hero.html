@@ -162,14 +162,14 @@
     </style>
 
 
-  <!-- Background (data-bg used by script) -->
+  <!-- BACKGROUND IMAGE (hero-bg) -->
   <div 
     class="hero-bg" 
-    data-bg="../assets/hero-bg.png"
+    data-bg="assets/hero-bg.png"
     role="img"
     aria-label="Teknisi OnFix bekerja — layanan AC dan instalasi profesional"
-    style="background-image: url('../assets/hero-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
-></div>
+    style="background-image: url('assets/hero-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+  ></div>
 
   <div class="hero-inner container">
     <!-- Glass card -->
@@ -191,11 +191,17 @@
       </div>
     </div>
 
-    <!-- Pop-out visual (overlaps out of the card) -->
+    <!-- POP-OUT IMAGE -->
     <div class="hero-popout-wrap" aria-hidden="false">
       <div class="hero-popout" role="img" aria-label="Teknisi OnFix sedang melakukan servis AC">
         <div class="popout-badge" aria-hidden="true">INSTALASI • SERVICE</div>
-        <img src="../assets/hero-tech-popout.jpg" alt="Teknisi OnFix sedang memasang unit AC" loading="lazy">
+    
+        <!-- gunakan src langsung (bukan data-src) agar langsung tampil tanpa lazy loader tambahan -->
+        <img src="assets/hero-tech-popout.jpg" 
+             alt="Teknisi OnFix sedang memasang unit AC" 
+             loading="lazy"
+             width="1200" height="700">
+    
         <div class="popout-caption">Instalasi & Maintenance AC — Laporan foto & garansi kerja</div>
       </div>
     </div>
@@ -225,6 +231,7 @@
   </div>
 
   <script>
+    
     // Hero scripts: set background, parallax for bg, subtle popout motion on scroll & hover tilt
     (function(){
       const heroBg = document.querySelector('.hero-fullbleed-popout .hero-bg');
@@ -277,3 +284,4 @@
     })();
   </script>
 </section>
+
