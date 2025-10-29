@@ -2,7 +2,11 @@
   <div class="footer-top container">
     <div class="footer-brand">
       <a href="#" class="brand d-flex align-items-center gap-2" aria-label="OnFix Home">
-        <img src="../assets/logo-onfix.png" alt="OnFix logo" class="footer-logo" loading="lazy" style="max-height:42px;">
+        <img src="assets/logo-onfix.png" 
+             alt="OnFix logo" 
+             class="footer-logo" 
+             loading="lazy" 
+             style="max-height:42px;">
         <div>
           <div class="brand-name">OnFix</div>
           <div class="brand-tag muted small">Teknisi Modern untuk Rumah & Usaha</div>
@@ -74,11 +78,9 @@
         const email = document.getElementById('subsEmail').value.trim();
         const msg = document.getElementById('subsMsg');
         if (!email) { msg.textContent = 'Masukkan email valid.'; return; }
-        // Simple front-end feedback — you can hook this to API later
         msg.textContent = 'Terima kasih — email telah tercatat.';
         subForm.reset();
       });
     }
   </script>
 </footer>
-
