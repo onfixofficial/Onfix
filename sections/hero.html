@@ -1,0 +1,279 @@
+<section id="hero" class="hero-fullbleed-popout" aria-label="Hero OnFix - layanan teknisi modern">
+  <style>
+    /* ---------- Hero Full-bleed Background + Glass Card + Popout ---------- */
+    .hero-fullbleed-popout {
+        position: relative;
+        min-height: 78vh;
+        display: flex;
+        align-items: center;
+        padding: 80px 0;
+        overflow: visible;
+    }
+
+    /* background utama */
+    .hero-fullbleed-popout .hero-bg {
+        position: absolute;
+        inset: 0;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 0;
+        filter: saturate(.95) contrast(.98);
+        transition: transform .6s ease, filter .4s ease;
+    }
+    .hero-fullbleed-popout::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(3,7,18,0.18) 0%, rgba(255,255,255,0.02) 60%);
+        z-index: 1;
+    }
+
+    /* kontainer utama */
+    .hero-inner {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* glass card */
+    .hero-card {
+        width: min(980px, 92%);
+        background: rgba(255,255,255,0.88);
+        backdrop-filter: blur(8px) saturate(1.05);
+        border-radius: 20px;
+        padding: 32px 40px 110px; /* tambahkan space bawah agar tidak tertutup gambar */
+        text-align: center;
+        box-shadow: 0 40px 120px rgba(6,12,28,0.14);
+        position: relative;
+        overflow: visible;
+        z-index: 3; /* pastikan card di atas background */
+    }
+
+    .hero-card .muted {
+        color: #334155;
+        display: block;
+        margin-bottom: 6px;
+        font-size: 13px;
+    }
+
+    .hero-title {
+        font-size: 2.4rem;
+        margin: 6px 0 8px;
+        color: #0b1020;
+        font-weight: 800;
+        line-height: 1.02;
+        position: relative;
+        z-index: 4; /* pastikan teks di atas gambar */
+    }
+
+    .hero-title .accent {
+        color: var(--blue-2);
+        display: inline-block;
+        margin-top: 6px;
+    }
+
+    .hero-desc {
+        max-width: 760px;
+        margin: 0 auto 16px;
+        color: #475569;
+        font-size: 1rem;
+        position: relative;
+        z-index: 4;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        margin-top: 10px;
+        position: relative;
+        z-index: 4;
+    }
+
+    .btn-outline-light {
+        border: 1px solid rgba(11,20,40,0.06);
+        background: transparent;
+        color: var(--dark);
+    }
+
+    /* POP-OUT IMAGE */
+    .hero-popout-wrap {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -80px; /* posisi keluar dari card */
+        width: min(760px, 90%);
+        z-index: 2; /* di bawah teks tapi di atas background */
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-popout {
+        width: 100%;
+        max-width: 720px;
+        border-radius: 18px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 40px 100px rgba(0,0,0,0.25);
+        transition: transform .6s cubic-bezier(.2,.9,.2,1);
+    }
+
+    .hero-popout img {
+        display: block;
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+    }
+
+    .popout-caption {
+        text-align: center;
+        font-size: 13px;
+        color: #0b1020;
+        padding: 10px 0 4px;
+    }
+
+    /* highlight bar */
+    .hero-highlight {
+        margin-top: 140px; /* beri jarak agar tidak menabrak popout */
+        background: linear-gradient(90deg, #07172a 0%, #0b1224 100%);
+        color: #fff;
+        padding: 14px 22px;
+        border-radius: 14px;
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        box-shadow: 0 30px 80px rgba(6,12,28,0.2);
+        position: relative;
+        z-index: 2;
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+        .hero-card { padding: 24px 20px 90px; }
+        .hero-title { font-size: 1.7rem; }
+        .hero-popout img { height: 280px; }
+        .hero-popout-wrap { bottom: -60px; width: 94%; }
+        .hero-highlight { margin-top: 100px; width: 94%; }
+    }
+    </style>
+
+
+  <!-- Background (data-bg used by script) -->
+  <div 
+    class="hero-bg" 
+    data-bg="../assets/hero-bg.png"
+    role="img"
+    aria-label="Teknisi OnFix bekerja — layanan AC dan instalasi profesional"
+    style="background-image: url('../assets/hero-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+></div>
+
+  <div class="hero-inner container">
+    <!-- Glass card -->
+    <div class="hero-card reveal" id="heroCard">
+      <small class="muted">50K+ pelanggan puas • Teknisi tersertifikasi</small>
+
+      <h1 class="hero-title">
+        Layanan Teknik Profesional<br>
+        <span class="accent">Cepat — Rapi — Terpercaya</span>
+      </h1>
+
+      <p class="hero-desc muted">
+        Solusi instalasi smart home, AC, listrik, dan maintenance. Teknisi bersertifikat, laporan foto, garansi kerja.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary custom" href="https://wa.me/6281931786798?text=Halo%20OnFix">Konsultasi Gratis</a>
+        <a class="btn btn-outline-light" href="#projects">Lihat Studi Kasus</a>
+      </div>
+    </div>
+
+    <!-- Pop-out visual (overlaps out of the card) -->
+    <div class="hero-popout-wrap" aria-hidden="false">
+      <div class="hero-popout" role="img" aria-label="Teknisi OnFix sedang melakukan servis AC">
+        <div class="popout-badge" aria-hidden="true">INSTALASI • SERVICE</div>
+        <img src="../assets/hero-tech-popout.jpg" alt="Teknisi OnFix sedang memasang unit AC" loading="lazy">
+        <div class="popout-caption">Instalasi & Maintenance AC — Laporan foto & garansi kerja</div>
+      </div>
+    </div>
+
+    <!-- floating highlight stat (ke bawah popout) -->
+    <div class="hero-highlight reveal" aria-hidden="false">
+      <div class="stat">
+        <div class="num">50K+</div>
+        <div class="label">Satisfied Clients</div>
+      </div>
+
+      <div class="mini-tiles">
+        <div class="tile">
+          <div class="t-num">13+</div>
+          <div class="t-label">Years</div>
+        </div>
+        <div class="tile">
+          <div class="t-num">20</div>
+          <div class="t-label">Technicians</div>
+        </div>
+        <div class="tile">
+          <div class="t-num">10K</div>
+          <div class="t-label">Jobs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Hero scripts: set background, parallax for bg, subtle popout motion on scroll & hover tilt
+    (function(){
+      const heroBg = document.querySelector('.hero-fullbleed-popout .hero-bg');
+      const popout = document.querySelector('.hero-popout');
+      const card = document.getElementById('heroCard');
+
+      // set background image from data-bg attribute
+      if (heroBg) {
+        const src = heroBg.getAttribute('data-bg') || 'assets/hero-bg.jpg';
+        heroBg.style.backgroundImage = `url("${src}")`;
+      }
+
+      // parallax for bg and popout motion on scroll
+      const onScroll = () => {
+        const sc = window.scrollY;
+        if (heroBg) {
+          heroBg.style.transform = `translateY(${Math.min(0, sc * -0.06)}px) scale(${1 + Math.min(0.02, sc * 0.0004)})`;
+          heroBg.style.filter = `saturate(${1 - Math.min(0.06, sc * 0.0005)}) contrast(${1 - Math.min(0.04, sc * 0.0004)})`;
+        }
+        if (popout) {
+          // popout moves slightly up as user scrolls down (depth)
+          const move = Math.max(-32, -sc * 0.04);
+          popout.style.transform = `translateY(${move}px)`;
+        }
+      };
+      window.addEventListener('scroll', onScroll, { passive:true });
+      onScroll();
+
+      // micro-tilt: hover on popout (desktop)
+      if (popout && card && window.matchMedia('(pointer: fine)').matches) {
+        popout.addEventListener('mousemove', (e) => {
+          const r = popout.getBoundingClientRect();
+          const mx = (e.clientX - r.left) / r.width - 0.5;
+          const my = (e.clientY - r.top) / r.height - 0.5;
+          popout.style.transform = `translateY(-8px) rotateX(${ -my * 4 }deg) rotateY(${ mx * 6 }deg)`;
+          popout.style.boxShadow = '0 50px 120px rgba(6,12,28,0.32)';
+        });
+        popout.addEventListener('mouseleave', () => {
+          popout.style.transform = '';
+          popout.style.boxShadow = '';
+        });
+      }
+
+      // accessibility: respect reduced motion
+      const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (mq.matches) {
+        window.removeEventListener('scroll', onScroll);
+        if (popout) popout.style.transform = '';
+      }
+    })();
+  </script>
+</section>

@@ -1,0 +1,83 @@
+<footer id="siteFooter" class="site-footer">
+  <div class="footer-top container">
+    <div class="footer-brand">
+      <a href="#" class="brand d-flex align-items-center gap-2" aria-label="OnFix Home">
+        <img src="../assets/logo-onfix.png" alt="OnFix logo" class="footer-logo" loading="lazy" style="max-height:42px;">
+        <div>
+          <div class="brand-name">OnFix</div>
+          <div class="brand-tag muted small">Teknisi Modern untuk Rumah & Usaha</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="footer-links">
+      <div class="link-col">
+        <h6>Unit Layanan</h6>
+        <ul>
+          <li><a href="#services">Smart Home</a></li>
+          <li><a href="#services">AC & Maintenance</a></li>
+          <li><a href="#services">Instalasi Listrik</a></li>
+          <li><a href="#services">Car & Bike Wash</a></li>
+        </ul>
+      </div>
+
+      <div class="link-col">
+        <h6>Perusahaan</h6>
+        <ul>
+          <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#projects">Studi Kasus</a></li>
+          <li><a href="#cta">Kerjasama</a></li>
+          <li><a href="#contact">Karir</a></li>
+        </ul>
+      </div>
+
+      <div class="contact-col">
+        <h6>Hubungi Kami</h6>
+        <div class="small">WA: <a href="https://wa.me/6281931786798" target="_blank" rel="noopener">+62 819-3178-6798</a></div>
+        <div class="small">Email: <a href="mailto:support@onfix.id">support@onfix.id</a></div>
+
+        <div class="social mt-2">
+          <a href="https://instagram.com/onfix_id" target="_blank" aria-label="Instagram" rel="noopener">IG</a>
+          <a href="https://wa.me/6281931786798" target="_blank" aria-label="WhatsApp" rel="noopener">WA</a>
+          <a href="#" aria-label="Facebook" rel="noopener">FB</a>
+        </div>
+      </div>
+
+      <div class="news-col">
+        <h6>Berlangganan</h6>
+        <p class="muted small">Dapatkan promo & update proyek langsung ke email Anda.</p>
+        <form id="footerSubscribe" class="subscribe-form" onsubmit="return false;">
+          <input type="email" id="subsEmail" placeholder="Email Anda" required>
+          <button id="btnSubscribe" class="btn btn-sm">Subscribe</button>
+        </form>
+        <div id="subsMsg" class="muted small" aria-live="polite" style="margin-top:8px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="small muted">© <span id="yearFooterAlt"></span> OnFix — All rights reserved.</div>
+      <div class="small muted">Made with care • Privacy • Terms</div>
+    </div>
+  </div>
+
+  <script>
+    // fallback year for footer if main.js didn't run yet
+    document.getElementById('yearFooterAlt').textContent = new Date().getFullYear();
+
+    // simple subscribe behavior (front-end only)
+    const subForm = document.getElementById('footerSubscribe');
+    if (subForm) {
+      subForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('subsEmail').value.trim();
+        const msg = document.getElementById('subsMsg');
+        if (!email) { msg.textContent = 'Masukkan email valid.'; return; }
+        // Simple front-end feedback — you can hook this to API later
+        msg.textContent = 'Terima kasih — email telah tercatat.';
+        subForm.reset();
+      });
+    }
+  </script>
+</footer>

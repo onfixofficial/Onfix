@@ -1,0 +1,170 @@
+<!-- sections/cta.html -->
+<section class="cta-animated position-relative overflow-hidden py-5">
+  <!-- Background dynamic waves -->
+  <div class="wave-bg">
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+  </div>
+
+  <!-- Floating glow particles -->
+  <div class="glow-particles">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <div class="container text-center text-white position-relative">
+    <div class="reveal-content">
+      <h2 class="cta-heading mb-3">
+        Jadilah Bagian dari Revolusi Servis Modern
+      </h2>
+      <p class="cta-subtext mb-4">
+        OnFix bukan sekadar teknisi — kami mitra dalam inovasi.  
+        Bersama, kita ciptakan standar baru efisiensi, keamanan, dan kenyamanan.
+      </p>
+      <a href="https://wa.me/6281931786798?text=Halo%20OnFix%2C%20saya%20ingin%20membahas%20kerjasama"
+         target="_blank"
+         class="cta-btn">
+        <i class="bi bi-whatsapp me-2"></i> Hubungi Kami Sekarang
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+/* --- GENERAL STYLE --- */
+.cta-animated {
+  position: relative;
+  color: #fff;
+  background: radial-gradient(circle at 30% 30%, #031b43 0%, #010c1d 100%);
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- WAVE BACKGROUND --- */
+.wave-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 250%;
+  top: -75%;
+  left: -50%;
+  border-radius: 45%;
+  opacity: 0.35;
+  animation: waveMove 16s infinite linear;
+}
+.wave1 {
+  background: radial-gradient(circle at 50% 50%, rgba(0,224,255,0.4), transparent 70%);
+  animation-delay: 0s;
+}
+.wave2 {
+  background: radial-gradient(circle at 50% 50%, rgba(0,140,255,0.25), transparent 70%);
+  animation-delay: 5s;
+}
+.wave3 {
+  background: radial-gradient(circle at 50% 50%, rgba(0,255,184,0.2), transparent 70%);
+  animation-delay: 10s;
+}
+
+@keyframes waveMove {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* --- GLOW PARTICLES --- */
+.glow-particles span {
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: rgba(0,255,204,0.5);
+  border-radius: 50%;
+  animation: particleFloat 12s infinite ease-in-out;
+}
+.glow-particles span:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+.glow-particles span:nth-child(2) { top: 70%; left: 10%; animation-delay: 3s; }
+.glow-particles span:nth-child(3) { top: 50%; left: 80%; animation-delay: 5s; }
+.glow-particles span:nth-child(4) { top: 20%; left: 70%; animation-delay: 7s; }
+.glow-particles span:nth-child(5) { top: 80%; left: 60%; animation-delay: 9s; }
+
+@keyframes particleFloat {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.8; }
+  50% { transform: translateY(-20px) scale(1.4); opacity: 0.4; }
+}
+
+/* --- TEXT --- */
+.reveal-content {
+  position: relative;
+  z-index: 10;
+  animation: fadeUp 1.5s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.cta-heading {
+  font-weight: 800;
+  font-size: 2.2rem;
+  letter-spacing: -0.5px;
+  text-shadow: 0 6px 20px rgba(0,255,255,0.3);
+}
+.cta-subtext {
+  font-size: 1rem;
+  color: #e3f2ff;
+  opacity: 0.9;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* --- BUTTON --- */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #fff;
+  padding: 0.85rem 2rem;
+  border-radius: 60px;
+  background: linear-gradient(135deg, #00d2ff, #00b09b);
+  box-shadow: 0 0 25px rgba(0,224,255,0.3);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.cta-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.3), transparent 70%);
+  transform: scale(0);
+  transition: transform 0.4s ease;
+}
+
+.cta-btn:hover::after {
+  transform: scale(4);
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 50px rgba(0,255,255,0.4);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .cta-heading { font-size: 1.6rem; }
+  .cta-subtext { font-size: 0.95rem; padding: 0 1rem; }
+  .cta-btn { width: 90%; font-size: 0.95rem; }
+}
+</style>
