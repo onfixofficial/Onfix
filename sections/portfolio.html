@@ -9,7 +9,7 @@
       
       <div class="showcase-image reveal col-lg-4" data-anim="fade-right">
         <div class="image-glass">
-          <img src="../assets/project-large-1.jpg" alt="Proyek unggulan" class="img-fluid">
+          <img data-src="assets/project-large-1.jpg" alt="Proyek unggulan" class="lazy img-fluid" loading="lazy" src="assets/project-large-1.jpg">
         </div>
       </div>
 
@@ -32,28 +32,28 @@
 
     <div class="portfolio-grid reveal" data-anim="fade-up">
       <div class="portfolio-card" data-full="../assets/project-thumb-1.jpg">
-        <img src="../assets/project-thumb-1.jpg" alt="Instalasi listrik industri" class="portfolio-img">
+        <img data-src="assets/project-thumb-1.jpg" alt="Instalasi listrik industri" class="portfolio-img">
         <div class="overlay">
           <h5>Instalasi Listrik Industri</h5>
           <p>Site BIB – Infrastruktur Energi</p>
         </div>
       </div>
       <div class="portfolio-card" data-full="../assets/project-thumb-2.jpg">
-        <img src="../assets/project-thumb-2.jpg" alt="Perawatan AC Korporat" class="portfolio-img">
+        <img data-src="assets/project-thumb-2.jpg" alt="Perawatan AC Korporat" class="portfolio-img">
         <div class="overlay">
           <h5>Perawatan AC Korporat</h5>
           <p>Optimalisasi efisiensi pendinginan</p>
         </div>
       </div>
       <div class="portfolio-card" data-full="../assets/project-thumb-3.jpg">
-        <img src="../assets/project-thumb-3.jpg" alt="Car & Bike Wash On-site" class="portfolio-img">
+       <img data-src="assets/assets/project-thumb-3.jpg" alt="Car & Bike Wash On-site" class="portfolio-img">
         <div class="overlay">
           <h5>Car & Bike Wash On-site</h5>
           <p>Layanan bersih & cepat di area proyek</p>
         </div>
       </div>
       <div class="portfolio-card" data-full="../assets/project-thumb-4.jpg">
-        <img src="../assets/project-thumb-4.jpg" alt="Maintenance & Inspeksi" class="portfolio-img">
+       <img data-src="assets/assets/project-thumb-4.jpg" alt="Maintenance & Inspeksi" class="portfolio-img">
         <div class="overlay">
           <h5>Maintenance & Inspeksi</h5>
           <p>Perawatan preventif berjadwal</p>
@@ -196,4 +196,5 @@ document.addEventListener("DOMContentLoaded", () => {
   close.addEventListener("click", () => lb.classList.remove("active"));
   lb.addEventListener("click", e => { if (e.target === lb) lb.classList.remove("active"); });
 });
+
 </script>
